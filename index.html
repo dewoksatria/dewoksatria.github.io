@@ -103,10 +103,18 @@
         .header h1 {
             font-size: 3em;
             margin-bottom: 10px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .header h1 .gradient-text {
             background: linear-gradient(135deg, #58a6ff 0%, #79c0ff 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            font-weight: 700;
+            background-clip: text;
         }
 
         .header .subtitle {
@@ -460,7 +468,7 @@
 
         function renderProfile(user, repos) {
             // Header
-            document.getElementById('userName').innerHTML = `${user.name || user.login} <span class="wave">👋</span>`;
+            document.getElementById('userName').innerHTML = `<span class="gradient-text">${user.name || user.login}</span> <span class="wave">👋</span>`;
             document.getElementById('userLogin').textContent = `@${user.login}`;
             document.getElementById('userBio').textContent = user.bio || '🦫 Full Stack Developer | Capybara Enthusiast | Code Craftsman';
 
